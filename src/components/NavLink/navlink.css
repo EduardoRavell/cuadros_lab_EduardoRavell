@@ -1,0 +1,18 @@
+.link {
+    color: rgb(30, 30, 30);
+}
+
+.link::after {
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: #000000;
+    transition: 500ms;
+}
+
+.link:hover:after {
+    text-decoration: underline;
+    text-decoration-color: rgb(108, 32, 32);
+    width: 100%;
+}

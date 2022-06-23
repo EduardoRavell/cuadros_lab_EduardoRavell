@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../img/logo.png';
-
+import CartWidget  from "../CartWidget/CartWidget";
 export default function navbar(){
     return (
         <>
@@ -17,6 +17,7 @@ export default function navbar(){
               <NavLink link="#Nosotros" title="Nosotros"/>
               <NavLink link="#Contacto" title="Contacto" />
             </Nav>
+          <CartWidget/>
           </Container>
         </Navbar>
       </>

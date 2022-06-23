@@ -1,9 +1,9 @@
 import './ItemListContainer.css';
-function ItemListContainer(){
+function ItemListContainer(props){
     return (
     <>
     <div className="ItemListContainer">
-        <h1>Bienvenidos a CuadrosLab</h1>
+        <h1>{props.titulo}</h1>
     </div>
     </>
     );

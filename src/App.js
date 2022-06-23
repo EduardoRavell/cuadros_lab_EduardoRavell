@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="App">
       
-      <header className="">
+      <header className="header">
       <NavBar/>
       </header>
       <Body>
-        <ItemListContainer/>
+        <ItemListContainer titulo="Bienvenidos a CuadrosLab"/>
       </Body>
     </div>
   );

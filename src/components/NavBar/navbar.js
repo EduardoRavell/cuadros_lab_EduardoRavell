@@ -17,7 +17,7 @@ export default function navbar(){
               <NavLink link="#Nosotros" title="Nosotros"/>
               <NavLink link="#Contacto" title="Contacto" />
             </Nav>
-          <CartWidget/>
+          <CartWidget link="carrito#"/>
           </Container>
         </Navbar>
       </>

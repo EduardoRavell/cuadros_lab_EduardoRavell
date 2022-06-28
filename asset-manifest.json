@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/EduardoRavell/cuadros_lab_EduardoRavell/static/css/main.18ab1357.css",
+    "main.js": "/EduardoRavell/cuadros_lab_EduardoRavell/static/js/main.76dfe00f.js",
+    "static/js/787.7be850df.chunk.js": "/EduardoRavell/cuadros_lab_EduardoRavell/static/js/787.7be850df.chunk.js",
+    "index.html": "/EduardoRavell/cuadros_lab_EduardoRavell/index.html",
+    "main.18ab1357.css.map": "/EduardoRavell/cuadros_lab_EduardoRavell/static/css/main.18ab1357.css.map",
+    "main.76dfe00f.js.map": "/EduardoRavell/cuadros_lab_EduardoRavell/static/js/main.76dfe00f.js.map",
+    "787.7be850df.chunk.js.map": "/EduardoRavell/cuadros_lab_EduardoRavell/static/js/787.7be850df.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18ab1357.css",
+    "static/js/main.76dfe00f.js"
+  ]
+}

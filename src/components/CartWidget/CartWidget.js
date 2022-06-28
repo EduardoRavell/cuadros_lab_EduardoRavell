@@ -6,7 +6,7 @@ function CartWidget(props){
         <>
         <div>
         <a href={props.link}>
-        <FontAwesomeIcon icon={faCartShopping} color="black" size="lg"/>
+        <FontAwesomeIcon icon={faCartShopping} color="black" size="lg"/> 
         </a>
         </div>
       </>

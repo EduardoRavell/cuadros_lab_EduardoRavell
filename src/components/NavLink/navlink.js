@@ -1,4 +1,4 @@
-import './navlink.css';
+import './NavLink.css';
 import Nav from 'react-bootstrap/Nav';
 function NavLink(props){
     return(

@@ -1,6 +1,6 @@
 
-import "./navbar.css";
-import NavLink from "../NavLink/navlink.js";
+import "./NavBar.css";
+import NavLink from "../NavLink/NavLink.js";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';

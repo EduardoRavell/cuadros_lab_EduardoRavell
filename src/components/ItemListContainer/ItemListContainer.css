@@ -1,9 +1,8 @@
 .ItemListContainer {
-    background-color: #000000;
-    color: #ffffff;
-    height: 100vh;
+
+    height: 100%;
 }
 
-.ItemList {
+.ItemLista {
     display: flex;
 }

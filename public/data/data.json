@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "categoria": "paisajes",
+        "titulo": "Dia soleado",
+        "descripcion": "Descripcion del cuadro",
+        "precio": 500
+    },
+    {
+        "id": 2,
+        "categoria": "paisajes",
+        "titulo": "Dia nublado",
+        "descripcion": "Descripcion del cuadro",
+        "precio": 200
+    },
+    {
+        "id": 3,
+        "categoria": "paisajes",
+        "titulo": "Paisaje de noche",
+        "descripcion": "Descripcion del cuadro",
+        "precio": 300
+    },
+    {
+        "id": 4,
+        "categoria": "Amaneceres",
+        "titulo": "Amanecer",
+        "descripcion": "Descripcion del cuadro",
+        "precio": 500
+    }
+]

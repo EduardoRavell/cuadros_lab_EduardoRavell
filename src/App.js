@@ -14,6 +14,7 @@ function App() {
       <Body>
         <ItemListContainer titulo="Bienvenidos a CuadrosLab"/>
       </Body>
+     
     </div>
   );
 }

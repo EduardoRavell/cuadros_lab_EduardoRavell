@@ -4,6 +4,7 @@ function Body({children}){
     <>
     <div className="body">
         {children}
+        
     </div>
     </>
     );

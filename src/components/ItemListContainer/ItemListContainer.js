@@ -29,10 +29,6 @@ function ItemListContainer(props){
         
         <div className="ItemLista">
             <ItemList listadoCuadros={cuadros}/>
-        {/* <ItemCount stock="5" initial="1"/>
-        <ItemCount stock="10" initial="1"/>
-        <ItemCount stock="15" initial="1"/> */}
-       
         </div>
     </div>
     </>

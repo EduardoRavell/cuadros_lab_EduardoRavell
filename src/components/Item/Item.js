@@ -6,6 +6,7 @@ function Item({titulo,descripcion,categoria,precio}){
 
 <Card className="cuadro">
   <Card.Body>
+    
     <Card.Title>{titulo}</Card.Title>
     <Card.Text>
     {descripcion}

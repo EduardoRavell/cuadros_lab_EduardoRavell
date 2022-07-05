@@ -4,5 +4,19 @@
 }
 
 .ItemLista {
-    display: flex;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    margin-top: 5px;
+}
+
+@media screen and(min-width:768px) {
+    .ItemLista {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+
+    }
 }

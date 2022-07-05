@@ -1,29 +1,33 @@
 [
     {
         "id": 1,
-        "categoria": "paisajes",
-        "titulo": "Dia soleado",
+        "img": "https://cdn.shopify.com/s/files/1/0258/6276/6677/products/160080-Canvas_0e25bc06-0efc-4d02-93f4-0845a1ecc7fa_700x.jpg?v=1654202829",
+        "categoria": "Caricaturas",
+        "titulo": "Tortugas Ninja",
         "descripcion": "Descripcion del cuadro",
         "precio": 500
     },
     {
         "id": 2,
-        "categoria": "paisajes",
+        "img": "https://cdn.shopify.com/s/files/1/0258/6276/6677/products/473-Canvas_9fd6c7cb-6ae0-4867-88c4-a00af1685e3e_700x.jpg?v=1654189940",
+        "categoria": "Iconicos",
         "titulo": "Dia nublado",
         "descripcion": "Descripcion del cuadro",
         "precio": 200
     },
     {
         "id": 3,
-        "categoria": "paisajes",
-        "titulo": "Paisaje de noche",
+        "img": "https://cdn.shopify.com/s/files/1/0258/6276/6677/products/198-Canvas_700x.jpg?v=1654187999",
+        "categoria": "Paisajes",
+        "titulo": "Bosque Calido",
         "descripcion": "Descripcion del cuadro",
         "precio": 300
     },
     {
         "id": 4,
+        "img": "https://cdn.shopify.com/s/files/1/0258/6276/6677/products/3530-Canvas_700x.jpg?v=1654204398",
         "categoria": "Amaneceres",
-        "titulo": "Amanecer",
+        "titulo": "Sol entre el bosque",
         "descripcion": "Descripcion del cuadro",
         "precio": 500
     }

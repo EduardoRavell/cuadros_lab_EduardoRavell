@@ -1,5 +1,6 @@
 .cuadro {
     width: 18rem;
     color: 'black';
-    margin: 5px;
+    margin: auto;
+    margin-bottom: 10px;
 }

@@ -4,19 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus,faMinus } from '@fortawesome/free-solid-svg-icons';
 import {useState} from 'react';
 
-function ItemCount(props){
-   const initial= parseInt(props.initial);
-   const stock = parseInt(props.stock);
+function ItemCount({stock,initial}){
+   const cantInitial= parseInt(initial);
+   const cantStock = parseInt(stock);
   const [cantidad,setCantidad]=useState(initial);
   
   const agregar= ()=>{
-    if(cantidad<stock){
+    if(cantidad<cantStock){
         setCantidad(cantidad+1);
     }
     }
 
     const restar= ()=>{
-       if(cantidad>initial){
+       if(cantidad>cantInitial){
         setCantidad(cantidad-1);
        }
           

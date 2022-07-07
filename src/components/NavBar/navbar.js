@@ -1,6 +1,6 @@
 
 import "./NavBar.css";
-import NavLink from "../NavLink/NavLink.js";
+import NavegacionLink from "../NavegacionLink/NavegacionLink.js";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,9 +13,10 @@ export default function navbar(){
           <Container className="contenedor">
             <Navbar.Brand href="#home"><img src={logo} alt="logo" className="logo"/></Navbar.Brand>
             <Nav className="me-auto">
-              <NavLink link="#Productos" title="Productos"/>
-              <NavLink link="#Nosotros" title="Nosotros"/>
-              <NavLink link="#Contacto" title="Contacto" />
+             
+              <NavegacionLink link="/productos" title="Productos"/>
+              <NavegacionLink link="/nosotros" title="Nosotros"/>
+              <NavegacionLink link="/contacto" title="Contacto" />
             </Nav>
           <CartWidget link="carrito#"/>
           </Container>

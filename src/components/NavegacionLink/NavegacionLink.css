@@ -1,5 +1,11 @@
 .link {
     color: rgb(30, 30, 30);
+    text-transform: none;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(48, 46, 46);
 }
 
 .link::after {
@@ -15,4 +21,11 @@
     text-decoration: underline;
     text-decoration-color: rgb(108, 32, 32);
     width: 100%;
+
+}
+
+.link.active {
+    color: rgb(62, 62, 62);
+    font-weight: bold;
+    border-bottom: 4px solid rgb(36, 36, 36);
 }

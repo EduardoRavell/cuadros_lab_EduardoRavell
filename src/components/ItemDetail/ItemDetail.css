@@ -1,9 +1,10 @@
 .ItemDetail {
     width: 350px;
-    height: 350px;
-    background: #ffff;
+    height: 420px;
+    background: rgb(33, 33, 33);
     border-radius: 5px;
     margin: auto;
+    color: white;
 }
 
 .img_cuadro {

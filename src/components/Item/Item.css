@@ -1,6 +1,12 @@
 .cuadro {
     width: 18rem;
+    height: 450px;
     color: 'black';
     margin: auto;
     margin-bottom: 10px;
+}
+
+.imagen {
+    width: 250px;
+    height: 200px;
 }

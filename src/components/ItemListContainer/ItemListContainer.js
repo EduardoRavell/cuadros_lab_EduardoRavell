@@ -28,7 +28,7 @@ function ItemListContainer(props){
         <h1>{props.titulo}</h1>
         
         <div className="ItemLista">
-            <ItemList listadoCuadros={cuadros}/>
+            <ItemList listadoCuadros={cuadros} />
         </div>
     </div>
     </>

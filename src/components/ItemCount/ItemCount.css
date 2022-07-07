@@ -1,12 +1,11 @@
 .item {
-    color: #b50c0c;
     font-size: 20px;
     background-color: rgb(253, 253, 253);
     padding: 30px;
     text-align: center;
     justify-content: center;
     width: 300px;
-    margin: 40px;
+    margin: auto;
 
 
 }

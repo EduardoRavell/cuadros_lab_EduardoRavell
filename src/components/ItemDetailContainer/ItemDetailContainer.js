@@ -7,7 +7,6 @@ function ItemDetailContainer(){
     const [cuadro,setCuadro] = useState([])
     // const elementoId= useParams();
   
-  
    const getItem = ()=>{
     fetch(`../data/data.json`, {
       headers : { 
@@ -16,8 +15,8 @@ function ItemDetailContainer(){
        }
     })
     .then((res)=>res.json())
-    .then((elementos) => 
-    setCuadro(elementos.filter(e=>e.id==params.cuadroId)))
+    .then((elementos) =>
+    setCuadro(elementos.filter(e =>e.id==params.cuadroId)))
     .catch(err=>console.log(err))
     }
     useEffect(()=>{
@@ -27,6 +26,7 @@ function ItemDetailContainer(){
  },[])
     return (
     <>
+    
     <div className='ItemDetailContainer'>
          { cuadro.map((cuadro)=>
        <ItemDetail id={cuadro.id} img={cuadro.img} titulo={cuadro.titulo} categoria={cuadro.categoria} descripcion={cuadro.descripcion} precio={cuadro.precio} stock={cuadro.stock}/>

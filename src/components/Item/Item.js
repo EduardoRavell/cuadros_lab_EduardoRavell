@@ -1,4 +1,4 @@
-import {Card,Button} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 import './Item.css';
@@ -19,7 +19,7 @@ function Item({id,img,titulo,descripcion,categoria,precio,stock}){
     <Card.Text>
     <b>${precio}</b>
     </Card.Text>
-   <Link  to={`/cuadro/${id}`}><Button className="btnDetalles"> Ver detalles</Button></Link>
+   <Link  to={`/cuadro/${id}`}><button className="botonCuadro"> Ver detalles</button></Link>
   </Card.Body>
 </Card>
         </>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus,faMinus } from '@fortawesome/free-solid-svg-icons';
 import {useState} from 'react';
 
-function ItemCount({stock,initial}){
+function ItemCount({stock,initial,onAdd}){
    const cantInitial= parseInt(initial);
    const cantStock = parseInt(stock);
   const [cantidad,setCantidad]=useState(initial);
@@ -29,24 +29,26 @@ function ItemCount({stock,initial}){
        
         <div className='item'>
                 <div className='d-flex mb-4 justify-content-center align-items-center'>
-                  <button className="btn btn-primary px-3 me-2"
+                  <button className="boton px-3 me-2"
                     onClick={restar}>
-                    <FontAwesomeIcon icon={faMinus} />
+                    <FontAwesomeIcon className="icono" icon={faMinus} />
                   </button>
 
                   <div className="form-outline">
                     <input min="0" name="quantity" value={cantidad} type="number" className="form-control text-center" />
                   </div>
                 <div>
-                  <button className="btn btn-primary px-3 ms-2 h-3"
-                  onClick={agregar}>
+                  <button className="boton px-3 ms-2 h-3"
+                  onClick={agregar}
+                  disabled={cantidad===stock ? true : null}>
                      <FontAwesomeIcon icon={faPlus} />
                   </button>
                   </div>
                 
                  
                   </div>
-                  <button className="btn-primary w-100">Agregar al carrito!</button>
+                  <button className="boton"
+                  onClick={()=>onAdd(cantidad)}>Agregar al carrito!</button>
         </div>
     
       </>

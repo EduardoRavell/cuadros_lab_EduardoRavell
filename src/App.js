@@ -8,6 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
 import Carrito from './components/Carrito/Carrito';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
         <Route path="/nosotros" element={<Nosotros/>}></Route> 
         <Route path="/contacto" element={<Contacto/>}></Route> 
         <Route path="/carrito" element={<Carrito/>}></Route> 
+        <Route path="/:idCategoria" element={<Productos/>}></Route> 
       </Routes>
       </header>
      

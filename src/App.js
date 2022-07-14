@@ -9,21 +9,28 @@ import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
 import Carrito from './components/Carrito/Carrito';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import {BrowserRouter} from 'react-router-dom';
+import {CartProvider} from './components/CartContext/CartContext';
+
 function App() {
   return (
     <div className="App">
       
       <header className="header">
-      <NavBar/>
-      <Routes>
-        <Route index element={<Productos/>}></Route>
-        <Route path="/productos" element={<Productos/>}></Route>
-        <Route path="/cuadro/:cuadroId" element={<ItemDetailContainer/>}></Route>
-        <Route path="/nosotros" element={<Nosotros/>}></Route> 
-        <Route path="/contacto" element={<Contacto/>}></Route> 
-        <Route path="/carrito" element={<Carrito/>}></Route> 
-        <Route path="/:idCategoria" element={<Productos/>}></Route> 
-      </Routes>
+        <CartProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route index element={<Productos/>}></Route>
+            <Route path="/productos" element={<Productos/>}></Route>
+            <Route path="/cuadro/:cuadroId" element={<ItemDetailContainer/>}></Route>
+            <Route path="/nosotros" element={<Nosotros/>}></Route> 
+            <Route path="/contacto" element={<Contacto/>}></Route> 
+            <Route path="/carrito" element={<Carrito/>}></Route> 
+            <Route path="/:idCategoria" element={<Productos/>}></Route> 
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
       </header>
      
     </div>

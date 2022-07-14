@@ -1,13 +1,15 @@
-import {useEffect, useState} from 'react';
+import {useContext, useState} from 'react';
+import { CartContext } from '../CartContext/CartContext';
 import {Link} from 'react-router-dom';
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 function ItemDetail(props){
+    const {agregarCarrito} = useContext(CartContext);
     const {id,img,titulo,categoria,descripcion,precio,stock}=props;
     const [compraRealizada,setCompraRealizada]=useState(false);
     const onAdd = (cantidad)=>{
         setCompraRealizada(true);
-        // addToCart()
+        agregarCarrito(props,cantidad);
     };
     return (
        
@@ -21,7 +23,7 @@ function ItemDetail(props){
            <p>${precio}</p>
         {compraRealizada ? ( 
         <Link to="/carrito" className="botonCarrito"
-        onClick={console.log('comprado')}>Ir al carrito</Link>)
+        onClick={console.log('')}>Ir al carrito</Link>)
         :
         (
         <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>

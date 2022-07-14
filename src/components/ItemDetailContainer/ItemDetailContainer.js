@@ -28,8 +28,8 @@ function ItemDetailContainer(){
     <>
     
     <div className='ItemDetailContainer'>
-         { cuadro.map((cuadro)=>
-       <ItemDetail id={cuadro.id} img={cuadro.img} titulo={cuadro.titulo} categoria={cuadro.categoria} descripcion={cuadro.descripcion} precio={cuadro.precio} stock={cuadro.stock}/>
+         { cuadro.map((cuadro,index)=>
+       <ItemDetail key={index} id={cuadro.id} img={cuadro.img} titulo={cuadro.titulo} categoria={cuadro.categoria} descripcion={cuadro.descripcion} precio={cuadro.precio} stock={cuadro.stock}/>
        )}
     </div>
     </>

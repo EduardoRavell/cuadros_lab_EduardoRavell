@@ -42,10 +42,16 @@ export const CartProvider = ({defaultValue=[],children})=>{
     const isInCart = (id)=>{
         return carrito.find((element)=>element.item.id==id);
     }
+    const eliminarCarrito = (item)=>{
+       if(isInCart(item.id)){
+        setCarrito(carrito.filter((e)=>e.id!==item.id));
+       }
+    }
     const context = {
         carrito,
         limpiarCarrito,
-        agregarCarrito
+        agregarCarrito,
+        eliminarCarrito
     }
     
     

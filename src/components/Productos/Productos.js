@@ -2,6 +2,7 @@ import './Productos.css';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import {Link} from 'react-router-dom';
 function Productos(){
+    
     const categorias = [
     {id:'1',direccion:'/',text:'Todos'},
     {id:'2',direccion:'/Caricaturas',text:'Caricaturas'},

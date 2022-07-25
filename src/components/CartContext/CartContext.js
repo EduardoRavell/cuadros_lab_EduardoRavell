@@ -11,6 +11,7 @@ const {Provider} = CartContext;
 
 export const CartProvider = ({defaultValue=[],children})=>{
     const [carrito,setCarrito] = useState(defaultValue);
+    // const [elementosCarrito,setElementosCarrito] = useState(0);
 
     const limpiarCarrito = ()=>{
         setCarrito([]);
@@ -44,14 +45,29 @@ export const CartProvider = ({defaultValue=[],children})=>{
     }
     const eliminarCarrito = (item)=>{
        if(isInCart(item.id)){
-        setCarrito(carrito.filter((e)=>e.id!==item.id));
+        setCarrito(carrito.filter((e)=>e.item.id!=item.id));
        }
     }
+
+    const totalCompra = ()=>{
+       const total = carrito.reduce((previous,current) =>previous + current.cantidad * current.item.precio,0)
+       return total;
+    }
+    // const contadorCarrito = ()=>{
+        
+    //    carrito.map((cuadro)=>{
+    //     console.log(cuadro)
+    //     setElementosCarrito(elementosCarrito+cuadro.cantidad)
+    //    })
+    // //    console.log(elementosCarrito);
+    // }
+
     const context = {
         carrito,
         limpiarCarrito,
         agregarCarrito,
-        eliminarCarrito
+        eliminarCarrito,
+        totalCompra
     }
     
     

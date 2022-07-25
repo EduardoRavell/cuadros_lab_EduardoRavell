@@ -5,8 +5,8 @@ function NavegacionLink(props){
     return(
         // <li className=" link">{props.title}/>;
         
-            <Nav.Link>
-                <NavLink activeClassName="active" className="link" to={props.link}>{props.title} </NavLink>
+            <Nav.Link className='mt-3'>
+                <NavLink activeClassName='active' className="link" to={props.link}>{props.title} </NavLink>
             </Nav.Link>
       
         

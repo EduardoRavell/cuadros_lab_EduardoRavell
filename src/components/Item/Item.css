@@ -6,9 +6,16 @@
     margin-bottom: 10px;
 }
 
+
+
 .imagen {
     width: 250px;
     height: 200px;
+}
+
+
+.imagen:hover {
+    transform: scale(1.05);
 }
 
 .botonCuadro {

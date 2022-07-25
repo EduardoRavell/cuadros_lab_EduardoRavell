@@ -1,0 +1,18 @@
+.contenedor-carrito {}
+
+.contador-carrito {
+    position: absolute;
+    margin-left: 2%;
+    margin-bottom: 20px;
+    width: 20px;
+    height: 25px;
+    top: 3px;
+    color: rgb(255, 248, 248);
+    background-color: black;
+    border-radius: 50%;
+
+}
+
+.carrito {
+    width: 20px;
+}

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 function ItemDetail(props){
-    const {agregarCarrito} = useContext(CartContext);
+    const {agregarCarrito,contadorCarrito} = useContext(CartContext);
     const {id,img,titulo,categoria,descripcion,precio,stock}=props;
     const [compraRealizada,setCompraRealizada]=useState(false);
     const onAdd = (cantidad)=>{
@@ -23,13 +23,12 @@ function ItemDetail(props){
            <p>${precio}</p>
         {compraRealizada ? ( 
         <Link to="/carrito" className="botonCarrito"
-        onClick={console.log('')}>Ir al carrito</Link>)
+        >Ir al carrito</Link>)
         :
         (
         <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
         )}
          
-        
         </div>
     </>
     );

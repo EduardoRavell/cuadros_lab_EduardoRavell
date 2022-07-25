@@ -6,7 +6,7 @@ function ItemList({listadoCuadros}){
     <>
         
        { listadoCuadros.map((cuadro)=>
-       <Item id={cuadro.id} img={cuadro.img} titulo={cuadro.titulo} categoria={cuadro.categoria} descripcion={cuadro.descripcion} precio={cuadro.precio} stock={cuadro.stock}/>
+       <Item key={cuadro.id} id={cuadro.id} img={cuadro.img} titulo={cuadro.titulo} categoria={cuadro.categoria} descripcion={cuadro.descripcion} precio={cuadro.precio} stock={cuadro.stock}/>
        )}
        
    

@@ -74,8 +74,12 @@ html {
     height: 36px;
 }
 
+.botonFinalizar {
+    background-color: #000000;
+}
 
-.boton_accion:hover {
+.boton_accion:hover,
+.botonFinalizar:hover {
     background-color: #e4e4e4;
     color: #000000;
     border: 2px solid #000000;

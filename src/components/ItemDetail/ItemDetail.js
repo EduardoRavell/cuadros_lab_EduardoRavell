@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 function ItemDetail(props){
-    const {agregarCarrito,contadorCarrito} = useContext(CartContext);
+    const {agregarCarrito} = useContext(CartContext);
     const {id,img,titulo,categoria,descripcion,precio,stock}=props;
     const [compraRealizada,setCompraRealizada]=useState(false);
     const onAdd = (cantidad)=>{

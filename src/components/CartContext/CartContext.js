@@ -50,17 +50,10 @@ export const CartProvider = ({defaultValue=[],children})=>{
     }
 
     const totalCompra = ()=>{
-       const total = carrito.reduce((previous,current) =>previous + current.cantidad * current.item.precio,0)
-       return total;
+    const total = carrito.reduce((previous,current) =>previous + current.cantidad * current.item.precio,0)
+    return total
     }
-    // const contadorCarrito = ()=>{
-        
-    //    carrito.map((cuadro)=>{
-    //     console.log(cuadro)
-    //     setElementosCarrito(elementosCarrito+cuadro.cantidad)
-    //    })
-    // //    console.log(elementosCarrito);
-    // }
+
 
     const context = {
         carrito,

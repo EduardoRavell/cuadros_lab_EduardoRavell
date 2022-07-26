@@ -4,6 +4,7 @@ import { CartContext } from '../CartContext/CartContext';
 import {Link,NavLink} from 'react-router-dom';
 import {Button,Modal,Form} from 'react-bootstrap';
 import {getFirestore,collection, addDoc} from 'firebase/firestore';
+import swal from 'sweetalert';
 function Carrito(){
     const {carrito,eliminarCarrito,totalCompra,limpiarCarrito} = useContext(CartContext);
      const [idOrden,setIdOrden]=useState('');
@@ -31,7 +32,7 @@ function Carrito(){
         setTelefono('');
         setEmail('');
     }
-    const submitHandler = ()=>{
+    const submitHandler =async ()=>{
         const nuevoComprador ={
             nombre:nombre,
             telefono:telefono,
@@ -47,10 +48,13 @@ function Carrito(){
         }
                 const db = getFirestore();
         const ordersCollection = collection(db,"ordenes");
-        addDoc(ordersCollection,orden).then((doc)=>{
-            console.log(doc.id)});
-           
-      
+        await addDoc(ordersCollection,orden).then((doc)=>{
+            setIdOrden(doc.id)});
+           swal({
+            icon:'success',
+            title: `Gracias por su compra!  Su folio de seguimiento es: ${idOrden}`
+           }).catch(swal.noop);
+            console.log(idOrden);
         
         limpiarCarrito();
         setShow(false);

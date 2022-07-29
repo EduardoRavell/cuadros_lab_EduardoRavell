@@ -78,9 +78,14 @@ html {
     background-color: #000000;
 }
 
+
 .boton_accion:hover,
 .botonFinalizar:hover {
     background-color: #e4e4e4;
     color: #000000;
     border: 2px solid #000000;
+}
+
+.swal-boton {
+    margin-right: 150px;
 }

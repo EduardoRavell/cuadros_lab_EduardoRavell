@@ -1,5 +1,5 @@
 import './Carrito.css';
-import {useContext,useState} from 'react';
+import {useContext,useState,useEffect} from 'react';
 import { CartContext } from '../CartContext/CartContext';
 import {Link,NavLink} from 'react-router-dom';
 import {Button,Modal,Form} from 'react-bootstrap';
@@ -7,7 +7,8 @@ import {getFirestore,collection, addDoc} from 'firebase/firestore';
 import swal from 'sweetalert';
 function Carrito(){
     const {carrito,eliminarCarrito,totalCompra,limpiarCarrito} = useContext(CartContext);
-     const [idOrden,setIdOrden]=useState('');
+    const [carritoVacio,setCarritoVacio] = useState(true);
+    const [idOrden,setIdOrden]=useState('');
     const eliminarArticulo = (item)=>{
         eliminarCarrito(item);
     };
@@ -48,26 +49,39 @@ function Carrito(){
         }
                 const db = getFirestore();
         const ordersCollection = collection(db,"ordenes");
-        await addDoc(ordersCollection,orden).then((doc)=>{
-            setIdOrden(doc.id)});
-           swal({
+         await addDoc(ordersCollection,orden).then((doc)=>
+         swal({
             icon:'success',
-            title: `Gracias por su compra!  Su folio de seguimiento es: ${idOrden}`
-           }).catch(swal.noop);
+            title: `Gracias por su compra!  Su folio de seguimiento es: ${doc.id}`,
+            button: {
+                buttonText:'Confirmar',
+                className: 'botonCarrito swal-boton'
+              },
+            closeOnClickOutside: true
+           })
+            
+               );
+              
             console.log(idOrden);
         
         limpiarCarrito();
         setShow(false);
         limpiarFormulario();
     }
-
-    
+    useEffect(()=>{
+        if(carrito.length===0){
+            setCarritoVacio(true);
+        }else{
+            setCarritoVacio(false)
+        }
+    },[carrito.length])
+   
     
     return (
         <>
         <h1>Carrito</h1>
         
-            {carrito.length>=1 ? 
+            {!carritoVacio ? 
             <div className='contenedor_carrito'>
             <div className='articulo_carrito'>
             {
@@ -86,6 +100,8 @@ function Carrito(){
                 </div>
                 
            ))}
+            <Button className="botonFinalizar botonLimpiar" onClick={()=>{limpiarCarrito()}}
+        >Limpiar Carrito</Button>
            </div>
        <div className="resumen_carrito">
        <span className='total'>Total: $ {totalCompra()}</span>
@@ -93,7 +109,6 @@ function Carrito(){
         >Finalizar Compra</Button>
        </div>
         </div> : <div><p>No hay articulos en el carrito </p> <br/> <NavLink className="botonCarrito" to="/productos">Seguir comprando</NavLink></div>
-        
             }
        <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -112,7 +127,7 @@ function Carrito(){
           <Button variant="secondary" className="botonCarrito" onClick={handleClose}>
             Cerrar
           </Button>
-          <Button onClick={()=>submitHandler()} className="botonCarrito" >
+          <Button  onClick={()=>submitHandler()} className="botonCarrito" >
             Finalizar Pedido
           </Button>
         </Modal.Footer>

@@ -9,6 +9,7 @@ function Productos(){
     {id:'3',direccion:'/Iconicos',text:'Iconicos'},
     {id:'4',direccion:'/Paisajes',text:'Paisajes'},
     {id:'5',direccion:'/Peliculas',text:'Peliculas'},
+    {id:'6',direccion:'/Abstractos',text:'Abstractos'}
     ]
     return (
     <>

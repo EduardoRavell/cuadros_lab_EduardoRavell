@@ -5,9 +5,15 @@ function ItemList({listadoCuadros}){
     return (
     <>
         
-       { listadoCuadros.map((cuadro)=>
-       <Item key={cuadro.id} id={cuadro.id} img={cuadro.img} titulo={cuadro.titulo} categoria={cuadro.categoria} descripcion={cuadro.descripcion} precio={cuadro.precio} stock={cuadro.stock}/>
-       )}
+       { listadoCuadros.map((cuadro)=>{
+      
+       if(cuadro.stock>=1){
+        return (
+            <Item key={cuadro.id} id={cuadro.id} img={cuadro.img} titulo={cuadro.titulo} categoria={cuadro.categoria} descripcion={cuadro.descripcion} precio={cuadro.precio} stock={cuadro.stock}/>
+            );
+       }
+       
+    })}
        
    
     </>

@@ -3,7 +3,7 @@ import {useContext,useState,useEffect} from 'react';
 import { CartContext } from '../CartContext/CartContext';
 import {Link,NavLink} from 'react-router-dom';
 import {Button,Modal,Form} from 'react-bootstrap';
-import {getFirestore,collection, addDoc} from 'firebase/firestore';
+import {getFirestore,collection, addDoc, getDoc, where, query, getDocs, doc, writeBatch, updateDoc} from 'firebase/firestore';
 import swal from 'sweetalert';
 function Carrito(){
     const {carrito,eliminarCarrito,totalCompra,limpiarCarrito} = useContext(CartContext);
@@ -47,8 +47,39 @@ function Carrito(){
             items:carrito,
             fecha: Date()
         }
-                const db = getFirestore();
+        
+        const db = getFirestore();
+        
         const ordersCollection = collection(db,"ordenes");
+        carrito.map((prod)=>{
+            const p = query(collection(db,'productos'), where ('id','==',prod.item.id));
+        getDocs(p).then(snapshot=>{
+            snapshot.docs.map(documento=>{
+                const batch = writeBatch(db);
+                const productoStock = doc(db,"productos",documento.id);
+                const stockActualizado = parseInt(documento.data().stock) - parseInt(prod.cantidad);
+                batch.update(productoStock,{stock:stockActualizado});
+                batch.commit();
+            })
+           
+        })
+        
+        })
+       
+        
+        
+        
+        // getDocs(p).then(snapshot=>{
+        //     if(snapshot.size>1){
+        //        snapshot.doc.map((doc)=>{
+        //         doc.set({
+        //             stock:2
+        //         })
+        //        })
+        //     }
+        // })
+    
+            
          await addDoc(ordersCollection,orden).then((doc)=>
          swal({
             icon:'success',
@@ -60,7 +91,17 @@ function Carrito(){
             closeOnClickOutside: true
            })
             
-               );
+               ).catch((e)=>{
+                swal({
+                    icon:'error',
+                    title: `Lo sentimos, ha ocurrido un error al procesar su colicitud`,
+                    button: {
+                        buttonText:'Confirmar',
+                        className: 'botonCarrito swal-boton'
+                      },
+                    closeOnClickOutside: true
+                   })
+               });
               
             console.log(idOrden);
         

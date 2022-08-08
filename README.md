@@ -9,6 +9,6 @@ Este proyecto fue realizado para la entrega final del curso de React JS de Coder
 - Fontawesome  - Sirve para agregar iconos ya predefinidos facilitando el dar estilo al proyecto.
 
 ## Tecnologias
--React
--FireBase
--CSS
+- React
+- FireBase
+- CSS
